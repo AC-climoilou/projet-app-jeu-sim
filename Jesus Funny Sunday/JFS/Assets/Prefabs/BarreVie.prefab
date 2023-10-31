@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 295683113937556130}
   - component: {fileID: 8241361678169754365}
   m_Layer: 5
-  m_Name: ImageCoeur 1
+  m_Name: BarreVie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
