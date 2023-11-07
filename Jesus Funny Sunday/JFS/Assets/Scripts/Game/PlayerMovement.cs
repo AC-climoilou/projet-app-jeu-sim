@@ -4,27 +4,18 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private GameObject player;
-    public Camera mainCamera;
     private float maxSpeed = 7f;
-    private float gravityForce = 1.0f;
-    private float jumpHeight = 10.0f;
-    private bool facingRight = true;
+    private float jumpHeight = 25f;
+    private float playerGravity = 7f;
     private float moveDirection;
-    private bool isGrounded = true;
-    private Rigidbody2D rb;
-    private Collider2D col;
+    private Rigidbody2D playerRB;
+    private bool isOnGround;
 
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player");
-        rb = GetComponent<Rigidbody2D>();
-        col = GetComponent<Collider2D>();
-        rb.freezeRotation = true;
-        moveDirection = Input.GetAxis("Horizontal");
-
-        //camera follow player
+        playerRB = GetComponent<Rigidbody2D>();
+        playerRB.gravityScale = playerGravity;
 
     }
 
@@ -33,30 +24,35 @@ public class PlayerMovement : MonoBehaviour
     {
         moveDirection = Input.GetAxis("Horizontal");
 
-        //facing angle
+        //Facing angle
         if (moveDirection < 0)
         {
-            facingRight = false;
             GetComponent<SpriteRenderer>().color = Color.green;
-        } else
+        } else if (moveDirection > 0)
         {
-            facingRight = true;
             GetComponent<SpriteRenderer>().color = Color.yellow;
         }
 
-        //movement
-        if (isGrounded)
+        //jump
+        if (Input.GetKeyDown(KeyCode.W) && isOnGround)
         {
-            transform.Translate(Vector2.right * maxSpeed * moveDirection * Time.deltaTime);
-            if (Input.GetAxis("Vertical") > 0)
-            {
-                transform.Translate(Vector2.up * jumpHeight * Time.deltaTime);
-            }
-        } else
-        {
-            transform.Translate(Vector2.right * (maxSpeed / 2f) * moveDirection * Time.deltaTime);
+            isOnGround = false;
+            playerRB.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
         }
     }
 
+    void FixedUpdate()
+    {
+        //movement
+        Vector2 velocity = new Vector2(moveDirection * maxSpeed, playerRB.velocity.y);
+        playerRB.velocity = velocity;
+    }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Floor"))
+        {
+            isOnGround = true;
+        }
+    }
 }
