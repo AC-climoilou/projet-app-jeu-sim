@@ -99,7 +99,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7634e570b2782a438ded68175c4d170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCamera: {fileID: 0}
 --- !u!50 &1680336649019024418
 Rigidbody2D:
   serializedVersion: 4
@@ -113,7 +112,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 1
+  m_LinearDrag: 0
   m_AngularDrag: 1
   m_GravityScale: 1
   m_Material: {fileID: 0}
