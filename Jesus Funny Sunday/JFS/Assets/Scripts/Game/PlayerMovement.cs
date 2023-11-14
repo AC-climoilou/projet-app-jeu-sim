@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private float playerGravity = 7f;
     private float moveDirection;
     private Rigidbody2D playerRB;
+    public Camera camera;
     private bool isOnGround;
     private SpriteRenderer spriteRenderer;
     public Sprite jesusIdle;
@@ -25,11 +26,13 @@ public class PlayerMovement : MonoBehaviour
         playerRB = GetComponent<Rigidbody2D>();
         playerRB.gravityScale = playerGravity;
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        camera.transform.position = new Vector3(playerRB.position.x, -1.2f, -6.3f);
         moveDirection = Input.GetAxis("Horizontal");
 
         //Facing angle
