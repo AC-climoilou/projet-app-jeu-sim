@@ -88,9 +88,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (isOnGround) return;
+
         if (collision.gameObject.CompareTag("Floor"))
         {
-            isOnGround = true;
+            var collisionDir = ((Vector2)transform.position - collision.GetContact(0).point).normalized;
+            if(collisionDir.y > 0.5f)
+                isOnGround = true;
         }
     }
 }
