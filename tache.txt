@@ -1,0 +1,16 @@
+Élie
+Faire quatre shader
+Programmer projectile et mort joeur
+Programmer ennemy oeil
+
+
+Mathieu
+Programmer l'Ai de satan
+Finir le niveau 
+Faire le sprite de poudre
+Faire le sprite d'Attaque
+
+
+Antoine 
+Programmer attaque de mele
+
