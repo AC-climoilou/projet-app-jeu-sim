@@ -32,7 +32,31 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        camera.transform.position = new Vector3(playerRB.position.x, -1.2f, -6.3f);
+        //camera following player
+        camera.transform.position = new Vector3(31.33f, -1.2f, -6.3f);
+        if(playerRB.position.x > 31.21)
+        {
+            camera.transform.position = new Vector3(playerRB.position.x, -1.1f, -6.3f);
+            if (playerRB.position.y > 0.95f)
+            {
+                camera.transform.position = new Vector3(playerRB.position.x, playerRB.position.y, -6.3f);
+            }
+        } if(playerRB.position.x > 46.86)
+        {
+            camera.transform.position = new Vector3(46.91f, -1.2f, -6.3f);
+            if (playerRB.position.y > 1.02f)
+            {
+                camera.transform.position = new Vector3(46.91f, playerRB.position.y, -6.3f);
+            }
+        } if (playerRB.position.x <= 31.21)
+        {
+            if (playerRB.position.y > 1.02f)
+            {
+                camera.transform.position = new Vector3(31.33f, playerRB.position.y, -6.3f);
+            }
+        }
+
+
         moveDirection = Input.GetAxis("Horizontal");
 
         //Facing angle
