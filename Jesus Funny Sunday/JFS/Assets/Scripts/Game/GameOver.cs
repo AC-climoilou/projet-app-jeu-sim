@@ -5,17 +5,13 @@ using UnityEngine;
 public class GameOver : MonoBehaviour
 {
     public static GameOver instance;
+    private ParticleSystem blood;
 
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        blood = GameObject.Find("Blood Explosion").GetComponent<ParticleSystem>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -23,6 +19,12 @@ public class GameOver : MonoBehaviour
         if (collision.gameObject.CompareTag("OutOfBounds") || collision.gameObject.CompareTag("Enemy"))
         {
             GameManager.instance.UpdateLives(-1);
+
+            blood.transform.position = gameObject.transform.position;
+
+            blood.Play();
+
+            Destroy(gameObject);
         }
     }
 }

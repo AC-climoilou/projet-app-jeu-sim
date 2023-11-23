@@ -12,7 +12,6 @@ public class GameManager : MonoBehaviour
     public GameObject gameOverScreen;
     public GameObject player;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -54,8 +53,6 @@ public class GameManager : MonoBehaviour
         gameIsActive = false;
 
         gameOverScreen.SetActive(true);
-
-        Destroy(player);
     }
 
     public void UpdateLives(int livesToAdd = 0)
