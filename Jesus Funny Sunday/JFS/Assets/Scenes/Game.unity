@@ -220,7 +220,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: 0
+  m_Spacing: -467.31
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
@@ -545,6 +545,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nLives: 1
   gameIsActive: 1
+  gameIsPaused: 0
   gameOverScreen: {fileID: 731757450}
   player: {fileID: 8978401080028831658}
 --- !u!114 &302057671
