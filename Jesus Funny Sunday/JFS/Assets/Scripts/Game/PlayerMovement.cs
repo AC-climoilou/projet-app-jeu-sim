@@ -60,46 +60,51 @@ public class PlayerMovement : MonoBehaviour
         moveDirection = Input.GetAxis("Horizontal");
 
         //Facing angle
-        if (moveDirection < 0)
+        if (!GameManager.instance.gameIsPaused)
         {
-            spriteRenderer.flipX = true;
-            
-        } else if (moveDirection > 0)
-        {
-            spriteRenderer.flipX = false;
-        }
-
-        if (moveDirection != 0 && isOnGround)
-        {
-            jesusWalkAnimationTimer += Time.deltaTime;
-
-            if (jesusWalkAnimationTimer >= animationTime)
+            if (moveDirection < 0)
             {
-                jesusWalkAnimationTimer = 0.0f;
+                spriteRenderer.flipX = true;
 
-                if (spriteRenderer.sprite == jesusWalk1)
+            }
+            else if (moveDirection > 0)
+            {
+                spriteRenderer.flipX = false;
+            }
+
+            if (moveDirection != 0 && isOnGround)
+            {
+                jesusWalkAnimationTimer += Time.deltaTime;
+
+                if (jesusWalkAnimationTimer >= animationTime)
                 {
-                    spriteRenderer.sprite = jesusWalk2;
-                }
-                else
-                {
-                    spriteRenderer.sprite = jesusWalk1;
+                    jesusWalkAnimationTimer = 0.0f;
+
+                    if (spriteRenderer.sprite == jesusWalk1)
+                    {
+                        spriteRenderer.sprite = jesusWalk2;
+                    }
+                    else
+                    {
+                        spriteRenderer.sprite = jesusWalk1;
+                    }
                 }
             }
-        }
-        else if (isOnGround)
-        {
-            spriteRenderer.sprite = jesusIdle;
-        }
+            else if (isOnGround)
+            {
+                spriteRenderer.sprite = jesusIdle;
+            }
 
-        //jump
-        if (Input.GetKeyDown(KeyCode.W) && isOnGround)
-        {
-            isOnGround = false;
-            playerRB.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
-            spriteRenderer.sprite = jesusJump;
+            //jump
+            if (Input.GetKeyDown(KeyCode.W) && isOnGround)
+            {
+                isOnGround = false;
+                playerRB.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
+                spriteRenderer.sprite = jesusJump;
+            }
         }
     }
+        
 
     void FixedUpdate()
     {
