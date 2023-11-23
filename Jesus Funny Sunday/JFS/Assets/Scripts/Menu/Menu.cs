@@ -30,12 +30,12 @@ public class Menu : MonoBehaviour
 
     public static void ToGame()
     {
-        SceneManager.LoadScene("Game");
+        SceneNavigator.OpenGame();
     }
 
     public static void ExitGame()
     {
-        Application.Quit();
+        SceneNavigator.CloseGame();
     }
 
 }
