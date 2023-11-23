@@ -63,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
         //boss arena coordinates
         if(playerRB.position.x > 62.3f && playerRB.position.y > 20.02f)
         {
-            GetComponent<Camera>().transform.position = new Vector3(81.23f, 25.9f, -6.3f);
+            cam.transform.position = new Vector3(81.23f, 25.9f, -6.3f);
         }
 
 
