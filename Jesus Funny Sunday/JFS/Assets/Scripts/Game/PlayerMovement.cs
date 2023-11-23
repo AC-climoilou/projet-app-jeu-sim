@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private float playerGravity = 7f;
     private float moveDirection;
     private Rigidbody2D playerRB;
-    public Camera camera;
+    public Camera cam;
     private bool isOnGround;
     private SpriteRenderer spriteRenderer;
     public Sprite jesusIdle;
@@ -38,32 +38,32 @@ public class PlayerMovement : MonoBehaviour
     {
 
         //camera following player
-        camera.transform.position = new Vector3(31.33f, -1.2f, -6.3f);
+        cam.transform.position = new Vector3(31.33f, -1.2f, -6.3f);
         if(playerRB.position.x > 31.21)
         {
-            camera.transform.position = new Vector3(playerRB.position.x, -1.1f, -6.3f);
+            cam.transform.position = new Vector3(playerRB.position.x, -1.1f, -6.3f);
             if (playerRB.position.y > 0.95f)
             {
-                camera.transform.position = new Vector3(playerRB.position.x, playerRB.position.y, -6.3f);
+                cam.transform.position = new Vector3(playerRB.position.x, playerRB.position.y, -6.3f);
             }
         } if(playerRB.position.x > 46.86)
         {
-            camera.transform.position = new Vector3(46.91f, -1.2f, -6.3f);
+            cam.transform.position = new Vector3(46.91f, -1.2f, -6.3f);
             if (playerRB.position.y > 1.02f)
             {
-                camera.transform.position = new Vector3(46.91f, playerRB.position.y, -6.3f);
+                cam.transform.position = new Vector3(46.91f, playerRB.position.y, -6.3f);
             }
         } if (playerRB.position.x <= 31.21)
         {
             if (playerRB.position.y > 1.02f)
             {
-                camera.transform.position = new Vector3(31.33f, playerRB.position.y, -6.3f);
+                cam.transform.position = new Vector3(31.33f, playerRB.position.y, -6.3f);
             }
         }
         //boss arena coordinates
         if(playerRB.position.x > 62.3f && playerRB.position.y > 20.02f)
         {
-            camera.transform.position = new Vector3(81.23f, 25.9f, -6.3f);
+            GetComponent<Camera>().transform.position = new Vector3(81.23f, 25.9f, -6.3f);
         }
 
 
