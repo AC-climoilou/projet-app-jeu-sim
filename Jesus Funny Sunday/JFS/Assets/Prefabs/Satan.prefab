@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8764944856719718779}
   - component: {fileID: 8764944856719718662}
   - component: {fileID: 8764944856719718663}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Satan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
