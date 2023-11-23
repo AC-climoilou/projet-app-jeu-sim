@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BackgroundScript : MonoBehaviour
-{
+{/*
     public GameObject background;
     public GameObject camera;
     private Transform tr;
@@ -17,5 +17,5 @@ public class BackgroundScript : MonoBehaviour
     void Update()
     {
         background.transform.position = new Vector3(tr.position.x, tr.position.y+4.9f, 0.50f);
-    }
+    }*/
 }
