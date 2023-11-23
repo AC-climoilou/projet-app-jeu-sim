@@ -19,6 +19,10 @@ public class PlayerMovement : MonoBehaviour
     public Sprite jesusJump;
     private float jesusWalkAnimationTimer = 0f;
     private float animationTime = 0.1f;
+    //attack
+    public Transform attackPoint;
+    private float attackRange = 0.5f;
+    public LayerMask enemyLayer;
     
     // Start is called before the first frame update
     void Start()
@@ -32,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         //camera following player
         camera.transform.position = new Vector3(31.33f, -1.2f, -6.3f);
         if(playerRB.position.x > 31.21)
@@ -55,6 +60,11 @@ public class PlayerMovement : MonoBehaviour
                 camera.transform.position = new Vector3(31.33f, playerRB.position.y, -6.3f);
             }
         }
+        //boss arena coordinates
+        if(playerRB.position.x > 62.3f && playerRB.position.y > 20.02f)
+        {
+            camera.transform.position = new Vector3(81.23f, 25.9f, -6.3f);
+        }
 
 
         moveDirection = Input.GetAxis("Horizontal");
@@ -63,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
         if (moveDirection < 0)
         {
             spriteRenderer.flipX = true;
-            
+
         } else if (moveDirection > 0)
         {
             spriteRenderer.flipX = false;
@@ -99,6 +109,12 @@ public class PlayerMovement : MonoBehaviour
             playerRB.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
             spriteRenderer.sprite = jesusJump;
         }
+
+        //attack
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            attack();
+        }
     }
 
     void FixedUpdate()
@@ -123,5 +139,38 @@ public class PlayerMovement : MonoBehaviour
             if(collisionDir.y > 0.5f)
                 isOnGround = true;
         }
+    }
+
+    void attack()
+    {
+        //attack animation
+
+        //collision
+        if (spriteRenderer.flipX == false)
+        {
+            attackPoint.transform.position = new Vector2(playerRB.position.x + 1.1f, playerRB.position.y);
+        }
+        else
+        {
+            attackPoint.transform.position = new Vector2(playerRB.position.x - 1.1f, playerRB.position.y);
+        }
+
+        //detect range
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
+
+        foreach(Collider2D enemy in hitEnemies)
+        {
+            //damage enemy
+            Debug.Log("Hitting " + enemy);
+        }
+
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        if (attackPoint == null)
+            return;
+
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 }
