@@ -12,11 +12,22 @@ public class GameManager : MonoBehaviour
     public GameObject gameOverScreen;
     public GameObject player;
 
+    public AudioSource gameMusic;
+
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
         gameOverScreen.SetActive(false);
+
+        if (GameSettings.MuteSound == true)
+        {
+            gameMusic.Stop();
+        }
+        else
+        {
+            gameMusic.volume = GameSettings.SoundVolume;
+        }
     }
 
     private void Update()

@@ -28,11 +28,16 @@ public class GameOver : MonoBehaviour
 
             blood.transform.position = gameObject.transform.position;
 
-            blood.Play();
+            if(GameSettings.ObjectParticles == true)
+            {
+                blood.Play();
+            }
             
             cameraAudio.clip = gameOverSound;
+            cameraAudio.volume = GameSettings.SoundVolume;
             cameraAudio.Play();
-            
+
+            scream.GetComponent<AudioSource>().volume = GameSettings.SoundVolume;
             Instantiate(scream, transform.position, Quaternion.identity);
 
             Destroy(gameObject);

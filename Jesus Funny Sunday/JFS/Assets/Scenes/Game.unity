@@ -255,6 +255,7 @@ MonoBehaviour:
   gameIsPaused: 0
   gameOverScreen: {fileID: 1149878387}
   player: {fileID: 1088270123}
+  gameMusic: {fileID: 323046021}
 --- !u!1 &323046016
 GameObject:
   m_ObjectHideFlags: 0
@@ -1190,20 +1191,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 610129587713913934, guid: 9b098c2e71b61684fa08e0f97e055b8a, type: 3}
   m_PrefabInstance: {fileID: 610129587386457201}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1088270124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1088270123}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0258381537a453d4590ca82ae286cfea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameOverSound: {fileID: 8300000, guid: c810f1e5f02c70943b28160b8c9fcd9b, type: 3}
-  scream: {fileID: 7162658880439552979, guid: e47347477d9d0ef49b481c2a2b60b0b2, type: 3}
 --- !u!1 &1146268215
 GameObject:
   m_ObjectHideFlags: 0
@@ -10419,6 +10406,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7829838184733211809, guid: 9b098c2e71b61684fa08e0f97e055b8a, type: 3}
+      propertyPath: playerAudio
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 610129587713913907, guid: 9b098c2e71b61684fa08e0f97e055b8a, type: 3}
       propertyPath: cam
       value: 
