@@ -18,15 +18,23 @@ public class SaveSystem : MonoBehaviour
 
     public static bool CheckHasSave()
     {
-        if (File.Exists(Path.Combine(Application.persistentDataPath, $"game1.save")))
+        int compteur = 0;
+
+        if (!File.Exists(Path.Combine(Application.persistentDataPath, $"game1.save")))
         {
-            return true;
+            Menu.instance.slot1.interactable = false;
         }
-        else if (File.Exists(Path.Combine(Application.persistentDataPath, $"game2.save")))
+
+        if (!File.Exists(Path.Combine(Application.persistentDataPath, $"game2.save")))
         {
-            return true;
+            Menu.instance.slot2.interactable = false;
         }
-        else if (File.Exists(Path.Combine(Application.persistentDataPath, $"game3.save")))
+        if (!File.Exists(Path.Combine(Application.persistentDataPath, $"game3.save")))
+        {
+            Menu.instance.slot3.interactable = false;
+        }
+
+        if(compteur > 0)
         {
             return true;
         }
@@ -35,14 +43,10 @@ public class SaveSystem : MonoBehaviour
 
     public static GameState LoadSave(string slotChosen)
     {
-        if (CheckHasSave())
-        {
             var path = Path.Combine(Application.persistentDataPath, $"game{slotChosen}.save");
             var serializedSave = File.ReadAllText(path);
-
+            
             return JsonConvert.DeserializeObject<GameState>(serializedSave);
-        }
-        else { return null; }
     }
 }
 

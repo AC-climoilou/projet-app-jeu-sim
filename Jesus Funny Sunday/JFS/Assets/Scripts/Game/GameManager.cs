@@ -15,15 +15,12 @@ public class GameManager : MonoBehaviour
     public GameObject player;
     public AudioSource gameMusic;
 
-    public int nbrdeMorts = 0;
     public TextMeshProUGUI mortText;
+    public int nbrDeMorts;
     // Start is called before the first frame update
     void Start()
     {
-        if (SaveSystem.gameState != null)
-        {
-            nbrdeMorts = SaveSystem.gameState.NbrDeMorts;
-        }
+        mortText.text = $"Deaths: {SaveSystem.gameState.NbrDeMorts}";
 
         instance = this;
         gameOverScreen.SetActive(false);
@@ -69,14 +66,15 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        nbrdeMorts++;
-        mortText.text = $"Deaths: {nbrdeMorts}";
+        SaveSystem.gameState.NbrDeMorts++;
+
+        mortText.text = $"Deaths: {SaveSystem.gameState.NbrDeMorts}";
 
         gameIsActive = false;
 
         gameOverScreen.SetActive(true);
 
-        SaveSystem.SaveGame(new GameState(nbrdeMorts, Menu.slotChosen));
+        SaveSystem.SaveGame(new GameState(nbrDeMorts, Menu.instance.slotChosen));
     }
 
     public void UpdateLives(int livesToAdd = 0)

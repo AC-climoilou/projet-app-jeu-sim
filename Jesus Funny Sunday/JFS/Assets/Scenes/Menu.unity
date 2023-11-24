@@ -3411,6 +3411,9 @@ MonoBehaviour:
   buttonContinuer: {fileID: 884733825}
   slotChosen: 0
   state: 
+  slot1: {fileID: 624221600}
+  slot2: {fileID: 2096491640}
+  slot3: {fileID: 1362538327}
 --- !u!114 &1390362648
 MonoBehaviour:
   m_ObjectHideFlags: 0

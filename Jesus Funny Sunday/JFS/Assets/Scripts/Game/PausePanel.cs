@@ -41,7 +41,7 @@ public class PausePanel : MonoBehaviour
     {
         Time.timeScale = 1f - Time.timeScale;
         GameManager.instance.gameIsPaused = false;
-        SaveSystem.SaveGame(new GameState(GameManager.instance.nbrdeMorts, Menu.slotChosen));
+        SaveSystem.SaveGame(SaveSystem.gameState);
         SceneNavigator.OpenMenu();
     }
 }

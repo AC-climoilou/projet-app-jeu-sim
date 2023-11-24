@@ -1,6 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
+using System.Diagnostics;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
@@ -14,8 +12,12 @@ public class Menu : MonoBehaviour
     public GameObject optionsPanel;
     public GameObject slots;
     public Button buttonContinuer;
-    public static string slotChosen;
-    public static string state;
+    public string slotChosen;
+    public string state;
+
+    public Button slot1;
+    public Button slot2;
+    public Button slot3;
 
     void Start()
     {
@@ -65,16 +67,21 @@ public class Menu : MonoBehaviour
         state = "new";
         menu.SetActive(false);
         slots.SetActive(true);
+
+        slot1.interactable = true;
+        slot2.interactable = true;
+        slot3.interactable = true;
     }
 
     public void Continuer()
     {
+        SaveSystem.CheckHasSave();
         state = "continuer";
         menu.SetActive(false);
         slots.SetActive(true);
     }
 
-    public static void ToGame()
+    public void ToGame()
     {
         if (state.Equals("continuer"))
         {
@@ -83,7 +90,7 @@ public class Menu : MonoBehaviour
         }
         else
         {
-            SaveSystem.gameState = null;
+            SaveSystem.gameState = new GameState(0, slotChosen);
             SceneNavigator.OpenGame();
         }
     }
