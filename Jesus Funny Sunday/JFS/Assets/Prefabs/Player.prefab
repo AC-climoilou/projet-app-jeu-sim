@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 610129587713913907}
   - component: {fileID: 610129587713913904}
   - component: {fileID: 610129587713913905}
+  - component: {fileID: -7829838184733211809}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -184,7 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7634e570b2782a438ded68175c4d170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 0}
+  cam: {fileID: 0}
   jesusIdle: {fileID: 21300000, guid: b7b6e55f8911f5e4ebce8c1b9560320c, type: 3}
   jesusWalk1: {fileID: 21300000, guid: a7fdf72c6f646434db77e2d9a324460e, type: 3}
   jesusWalk2: {fileID: 21300000, guid: 49762729593760448a9a326b3ed8c660, type: 3}
@@ -240,3 +241,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.82}
   m_EdgeRadius: 0
+--- !u!114 &-7829838184733211809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 610129587713913934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0258381537a453d4590ca82ae286cfea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOverSound: {fileID: 8300000, guid: c810f1e5f02c70943b28160b8c9fcd9b, type: 3}
+  scream: {fileID: 7162658880439552979, guid: e47347477d9d0ef49b481c2a2b60b0b2, type: 3}
