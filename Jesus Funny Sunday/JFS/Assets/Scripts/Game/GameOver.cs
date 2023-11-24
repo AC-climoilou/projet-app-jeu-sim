@@ -24,6 +24,9 @@ public class GameOver : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("OutOfBounds") || collision.gameObject.CompareTag("Enemy"))
         {
+            scream.GetComponent<AudioSource>().volume = GameSettings.SoundVolume;
+            Instantiate(scream, transform.position, Quaternion.identity);
+
             GameManager.instance.UpdateLives(-1);
 
             blood.transform.position = gameObject.transform.position;
@@ -36,9 +39,6 @@ public class GameOver : MonoBehaviour
             cameraAudio.clip = gameOverSound;
             cameraAudio.volume = GameSettings.SoundVolume;
             cameraAudio.Play();
-
-            scream.GetComponent<AudioSource>().volume = GameSettings.SoundVolume;
-            Instantiate(scream, transform.position, Quaternion.identity);
 
             Destroy(gameObject);
         }

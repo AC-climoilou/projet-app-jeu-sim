@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,12 +13,18 @@ public class GameManager : MonoBehaviour
     public bool gameIsPaused = false;
     public GameObject gameOverScreen;
     public GameObject player;
-
     public AudioSource gameMusic;
 
+    public int nbrdeMorts = 0;
+    public TextMeshProUGUI mortText;
     // Start is called before the first frame update
     void Start()
     {
+        if (SaveSystem.gameState != null)
+        {
+            nbrdeMorts = SaveSystem.gameState.NbrDeMorts;
+        }
+
         instance = this;
         gameOverScreen.SetActive(false);
 
@@ -61,9 +69,14 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        nbrdeMorts++;
+        mortText.text = $"Deaths: {nbrdeMorts}";
+
         gameIsActive = false;
 
         gameOverScreen.SetActive(true);
+
+        SaveSystem.SaveGame(new GameState(nbrdeMorts, Menu.slotChosen));
     }
 
     public void UpdateLives(int livesToAdd = 0)
