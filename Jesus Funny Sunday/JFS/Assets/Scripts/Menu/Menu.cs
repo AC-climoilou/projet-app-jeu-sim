@@ -10,12 +10,13 @@ public class Menu : MonoBehaviour
 {
     public GameObject menu;
     public GameObject optionsPanel;
-
+    
+    
     void Start()
     {
         optionsPanel.SetActive(false);
     }
-
+    
     public void Parametres()
     {
         menu.SetActive(false);
