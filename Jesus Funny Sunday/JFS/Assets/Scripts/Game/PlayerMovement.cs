@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     private Vector2 velocity;
     private float maxSpeed = 10f;
-    private float jumpHeight = 25f;
+    private float jumpHeight = 26f;
     private float playerGravity = 7f;
     private float moveDirection;
     private Rigidbody2D playerRB;
