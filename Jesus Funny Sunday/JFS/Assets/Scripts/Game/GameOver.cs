@@ -11,6 +11,8 @@ public class GameOver : MonoBehaviour
     private ParticleSystem blood;
     public GameObject scream;
 
+    public ScriptLuminosite luminosite;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +42,7 @@ public class GameOver : MonoBehaviour
             cameraAudio.volume = GameSettings.SoundVolume;
             cameraAudio.Play();
 
+            
             Destroy(gameObject);
         }
     }
@@ -61,6 +64,9 @@ public class GameOver : MonoBehaviour
         cameraAudio.clip = gameOverSound;
         cameraAudio.volume = GameSettings.SoundVolume;
         cameraAudio.Play();
+
+        luminosite.FadeToBlack();
+
 
         Destroy(gameObject);
     }
