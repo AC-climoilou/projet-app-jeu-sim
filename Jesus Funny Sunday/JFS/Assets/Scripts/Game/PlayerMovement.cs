@@ -161,9 +161,12 @@ public class PlayerMovement : MonoBehaviour
         foreach (Collider2D enemy in hitEnemies)
         {
             // Damage enemy
-            Destroy(enemy.gameObject);
+            enemy.gameObject.GetComponent<EnemyHealth>().takeDMG();
+            if (enemy.gameObject.GetComponent<EnemyHealth>().getHP() == 0)
+            {
+                Destroy(enemy.gameObject);
+            }
         }
-
     }
 
     private void OnDrawGizmosSelected()
