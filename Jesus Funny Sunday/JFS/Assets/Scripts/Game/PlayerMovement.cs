@@ -23,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
     public Transform attackPoint;
     private float attackRange = 0.5f;
     public LayerMask enemyLayer;
+    private float attackTimer = 0;
+    private int maxAttackPerSec = 1;
     
     // Start is called before the first frame update
     void Start()
@@ -110,10 +112,13 @@ public class PlayerMovement : MonoBehaviour
             spriteRenderer.sprite = jesusJump;
         }
 
+        attackTimer += Time.deltaTime;
         //attack
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && attackTimer > maxAttackPerSec)
         {
+            attackTimer = 0;
             attack();
+            Debug.Log("ATTACKING");
         }
     }
 
