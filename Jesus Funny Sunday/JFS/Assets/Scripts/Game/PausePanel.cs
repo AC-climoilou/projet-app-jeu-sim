@@ -37,11 +37,11 @@ public class PausePanel : MonoBehaviour
         GameManager.instance.gameIsPaused = false;
     }
 
-
     private void RetourAuMenu()
     {
         Time.timeScale = 1f - Time.timeScale;
         GameManager.instance.gameIsPaused = false;
+        SaveSystem.SaveGame(SaveSystem.gameState);
         SceneNavigator.OpenMenu();
     }
 }
