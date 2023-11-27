@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 751386275159462746}
   - component: {fileID: 751386275159462749}
   - component: {fileID: 751386275159462748}
+  - component: {fileID: 237206779951002857}
   - component: {fileID: 751386275159462751}
   - component: {fileID: 751386275159462750}
   - component: {fileID: 751386275159462737}
@@ -35,7 +36,7 @@ Transform:
   m_Children:
   - {fileID: 751386276029420369}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &751386275159462749
 SpriteRenderer:
@@ -103,6 +104,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceMouvement: 5
   vitesse: 3
+--- !u!114 &237206779951002857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751386275159462736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 879a0fe0f0b94c646bd63423976b4304, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &751386275159462751
 MonoBehaviour:
   m_ObjectHideFlags: 0

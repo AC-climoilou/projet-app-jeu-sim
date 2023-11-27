@@ -23,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
     public Transform attackPoint;
     private float attackRange = 0.5f;
     public LayerMask enemyLayer;
+    private float attackTimer = 0;
+    private int maxAttackPerSec = 1;
     
     // Start is called before the first frame update
     void Start()
@@ -110,10 +112,13 @@ public class PlayerMovement : MonoBehaviour
             spriteRenderer.sprite = jesusJump;
         }
 
+        attackTimer += Time.deltaTime;
         //attack
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && attackTimer > maxAttackPerSec)
         {
+            attackTimer = 0;
             attack();
+            Debug.Log("ATTACKING");
         }
     }
 
@@ -158,12 +163,15 @@ public class PlayerMovement : MonoBehaviour
         //detect range
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
 
-        foreach(Collider2D enemy in hitEnemies)
+        foreach (Collider2D enemy in hitEnemies)
         {
-            //damage enemy
-            Debug.Log("Hitting " + enemy);
+            // Damage enemy
+            enemy.gameObject.GetComponent<EnemyHealth>().takeDMG();
+            if (enemy.gameObject.GetComponent<EnemyHealth>().getHP() == 0)
+            {
+                Destroy(enemy.gameObject);
+            }
         }
-
     }
 
     private void OnDrawGizmosSelected()
