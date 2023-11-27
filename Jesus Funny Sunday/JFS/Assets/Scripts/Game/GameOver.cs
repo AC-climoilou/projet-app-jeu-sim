@@ -67,7 +67,6 @@ public class GameOver : MonoBehaviour
 
         luminosite.FadeToBlack();
 
-
         Destroy(gameObject);
     }
 }
