@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     public Sprite jesusWalk1;
     public Sprite jesusWalk2;
     public Sprite jesusJump;
+    public Sprite jesusAttack;
     private float jesusWalkAnimationTimer = 0f;
     private float animationTime = 0.1f;
     //attack
@@ -114,11 +115,14 @@ public class PlayerMovement : MonoBehaviour
 
         attackTimer += Time.deltaTime;
         //attack
+        if (attackTimer < 0.4)
+        {
+            spriteRenderer.sprite = jesusAttack;
+        }
         if (Input.GetKeyDown(KeyCode.Space) && attackTimer > maxAttackPerSec)
         {
             attackTimer = 0;
             attack();
-            Debug.Log("ATTACKING");
         }
     }
 
@@ -149,6 +153,7 @@ public class PlayerMovement : MonoBehaviour
     void attack()
     {
         //attack animation
+        spriteRenderer.sprite = jesusWalk1;
 
         //collision
         if (spriteRenderer.flipX == false)

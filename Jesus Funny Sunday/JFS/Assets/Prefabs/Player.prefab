@@ -94,6 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 610129587713913909}
   - component: {fileID: 610129587713913906}
+  - component: {fileID: 5123227197938015329}
   - component: {fileID: 610129587713913907}
   - component: {fileID: 610129587713913904}
   - component: {fileID: 610129587713913905}
@@ -119,7 +120,7 @@ Transform:
   m_Children:
   - {fileID: 610129587336841324}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &610129587713913906
 SpriteRenderer:
@@ -173,6 +174,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5123227197938015329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 610129587713913934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b15e9f267aa0ca44affebdbf68102cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &610129587713913907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,3 +268,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverSound: {fileID: 8300000, guid: c810f1e5f02c70943b28160b8c9fcd9b, type: 3}
   scream: {fileID: 7162658880439552979, guid: e47347477d9d0ef49b481c2a2b60b0b2, type: 3}
+  luminosite: {fileID: 0}
