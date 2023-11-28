@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WinScreen : MonoBehaviour
 {
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -16,8 +17,11 @@ public class WinScreen : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        
+    public void OnTriggerEnter2D(Collider2D other)
+    { 
+        if (other.gameObject.tag == "Player")
+        {
+            SceneNavigator.OpenCredit();   
+        }
     }
 }

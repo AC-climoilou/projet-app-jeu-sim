@@ -1527,6 +1527,7 @@ GameObject:
   - component: {fileID: 1380178647}
   - component: {fileID: 1380178649}
   - component: {fileID: 1380178646}
+  - component: {fileID: 1380178650}
   m_Layer: 0
   m_Name: sprite poudre
   m_TagString: Poudre
@@ -1620,7 +1621,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1380178645}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 83.05, y: 14.9, z: 0}
+  m_LocalPosition: {x: 20.93, y: -6.19, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1639,6 +1640,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48d9728616f3a9542b52dcff96c885a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &1380178650
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380178645}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &1531888474
 GameObject:
   m_ObjectHideFlags: 0
