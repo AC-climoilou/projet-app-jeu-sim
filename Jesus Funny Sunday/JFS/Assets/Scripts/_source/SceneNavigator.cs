@@ -23,6 +23,11 @@ public class SceneNavigator : MonoBehaviour
         SceneManager.LoadScene("Game");
     }
 
+    public static void OpenCredit()
+    {
+        SceneManager.LoadScene("Credit");
+    }
+
     //Ferme le jeu
     public static void CloseGame()
     {
