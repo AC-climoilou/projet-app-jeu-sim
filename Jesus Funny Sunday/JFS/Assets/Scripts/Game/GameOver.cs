@@ -42,7 +42,8 @@ public class GameOver : MonoBehaviour
             cameraAudio.volume = GameSettings.SoundVolume;
             cameraAudio.Play();
 
-            
+            luminosite.FadeToBlack();
+
             Destroy(gameObject);
         }
     }
