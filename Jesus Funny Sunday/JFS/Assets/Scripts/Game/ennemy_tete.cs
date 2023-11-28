@@ -36,11 +36,13 @@ public class ennemy_tete : MonoBehaviour
         if (avanceVersLaDroite && transform.position.x > xEnd)
         {
             avanceVersLaDroite = false;
+            transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
             debutChangementDirection = true;
         }
         else if (!avanceVersLaDroite && transform.position.x < xStart)
         {
             avanceVersLaDroite = true;
+            transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
             debutChangementDirection = true;
         }
 
