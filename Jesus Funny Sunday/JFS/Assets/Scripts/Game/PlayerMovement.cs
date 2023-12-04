@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
     private float attackRange = 0.5f;
     public LayerMask enemyLayer;
     private float attackTimer = 0;
-    private int maxAttackPerSec = 1;
+    private float maxAttackPerSec = 0.5f;
     
     // Start is called before the first frame update
     void Start()
@@ -41,17 +41,17 @@ public class PlayerMovement : MonoBehaviour
     {
 
         //camera following player
-        cam.transform.position = new Vector3(31.33f, -1.2f, -6.3f);
+        cam.transform.position = new Vector3(31.33f, 0f, -6.3f);
         if(playerRB.position.x > 31.21)
         {
-            cam.transform.position = new Vector3(playerRB.position.x, -1.1f, -6.3f);
+            cam.transform.position = new Vector3(playerRB.position.x, 0f, -6.3f);
             if (playerRB.position.y > 0.95f)
             {
                 cam.transform.position = new Vector3(playerRB.position.x, playerRB.position.y, -6.3f);
             }
         } if(playerRB.position.x > 46.86)
         {
-            cam.transform.position = new Vector3(46.91f, -1.2f, -6.3f);
+            cam.transform.position = new Vector3(46.91f, 0f, -6.3f);
             if (playerRB.position.y > 1.02f)
             {
                 cam.transform.position = new Vector3(46.91f, playerRB.position.y, -6.3f);
@@ -66,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
         //boss arena coordinates
         if(playerRB.position.x > 62.3f && playerRB.position.y > 20.02f)
         {
-            cam.transform.position = new Vector3(81.23f, 25.9f, -6.3f);
+            cam.transform.position = new Vector3(81.23f, 26f, -6.3f);
         }
 
 

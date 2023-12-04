@@ -29,7 +29,6 @@ public class WinCondition : MonoBehaviour
     void spawnPowder()
     {
         done = 1;
-        Debug.Log("SpawnAAAAAAAAAAAAAAAAAAAAAAAA");
         BoxCollider2D bc = poudre.GetComponent<BoxCollider2D>();
         bc.transform.position = new Vector3(bc.transform.position.x, 19.80f, bc.transform.position.y);
     }

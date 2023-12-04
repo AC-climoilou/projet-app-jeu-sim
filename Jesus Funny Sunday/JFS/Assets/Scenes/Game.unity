@@ -313,7 +313,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7.64685
+  orthographic size: 9.1
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -771,7 +771,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 579653100}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.2047, z: 21.67}
+  m_LocalPosition: {x: 0, y: -0.84, z: 21.67}
   m_LocalScale: {x: 4.71, y: 2.5071208, z: 2.2718549}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1621,7 +1621,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1380178645}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 78.8, y: 15.72, z: 0}
+  m_LocalPosition: {x: 79.02, y: 14.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10667,6 +10667,10 @@ PrefabInstance:
       propertyPath: playerAudio
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 610129587336841324, guid: 9b098c2e71b61684fa08e0f97e055b8a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 610129587336841327, guid: 9b098c2e71b61684fa08e0f97e055b8a, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -10693,11 +10697,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 610129587713913909, guid: 9b098c2e71b61684fa08e0f97e055b8a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18.03
+      value: 18.41
       objectReference: {fileID: 0}
     - target: {fileID: 610129587713913909, guid: 9b098c2e71b61684fa08e0f97e055b8a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.77
+      value: -5.8
       objectReference: {fileID: 0}
     - target: {fileID: 610129587713913909, guid: 9b098c2e71b61684fa08e0f97e055b8a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10918,7 +10922,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8937650176886735219, guid: 256eb742620d61c4b9615b43545cb01c, type: 3}
       propertyPath: HP
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
