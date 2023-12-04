@@ -510,6 +510,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnnemyTete Variant (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3305879767185276727, guid: f4157dbf1877038448ac3c5056617e47, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3305879768027195903, guid: f4157dbf1877038448ac3c5056617e47, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: f4157dbf1877038448ac3c5056617e47, type: 3}
@@ -9896,8 +9904,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -10860,6 +10868,14 @@ PrefabInstance:
     - target: {fileID: 3305879767185276727, guid: f4157dbf1877038448ac3c5056617e47, type: 3}
       propertyPath: m_Name
       value: EnnemyTete Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 3305879767185276727, guid: f4157dbf1877038448ac3c5056617e47, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3305879768027195903, guid: f4157dbf1877038448ac3c5056617e47, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
